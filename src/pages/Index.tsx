@@ -51,9 +51,6 @@ const Index = () => {
               Рецепт хорошего настроения
             </h1>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                Начать проект
-              </Button>
               <Button size="lg" variant="outline" className="border-2">
                 Узнать больше
               </Button>
