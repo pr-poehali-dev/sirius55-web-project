@@ -272,7 +272,7 @@ const Index = () => {
                     +7 (902) 574-77-83
                   </a>
                 </div>
-                <div className="flex gap-3 justify-center mt-6">
+                <div className="flex flex-col gap-3 mt-6">
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90"
@@ -289,6 +289,15 @@ const Index = () => {
                   >
                     <Icon name="MessageCircle" className="mr-2" size={20} />
                     WhatsApp
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-2"
+                    onClick={() => window.open('https://t.me/79025747783', '_blank')}
+                  >
+                    <Icon name="Send" className="mr-2" size={20} />
+                    Telegram
                   </Button>
                 </div>
               </div>
