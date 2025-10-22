@@ -23,8 +23,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b">
-        <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-2xl font-bold text-foreground">
+        <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="text-xl md:text-2xl font-bold text-foreground">
             <span className="text-primary">sirius</span>55
           </div>
           <div className="hidden md:flex gap-8">
@@ -41,8 +41,9 @@ const Index = () => {
               Контакты
             </a>
           </div>
-          <Button size="sm" onClick={() => setIsContactOpen(true)}>
-            Связаться
+          <Button size="sm" onClick={() => setIsContactOpen(true)} className="shrink-0">
+            <span className="hidden sm:inline">Связаться</span>
+            <span className="sm:hidden">☎️</span>
           </Button>
         </nav>
       </header>
