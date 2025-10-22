@@ -34,9 +34,6 @@ const Index = () => {
             <a href="#advantages" className="text-foreground hover:text-primary transition-colors">
               Преимущества
             </a>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">
-              Услуги
-            </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
               Контакты
             </a>
@@ -102,83 +99,6 @@ const Index = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   Сайт обновляется регулярно дополняя новыми материалами.
                 </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" className="py-20 px-6">
-        <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Услуги
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="border-2 hover:shadow-lg transition-all duration-300">
-              <CardContent className="pt-8 pb-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon name="Code" size={24} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3">Разработка сайтов</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Создаем современные веб-сайты с адаптивным дизайном, 
-                      оптимизированные для всех устройств и браузеров.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-lg transition-all duration-300">
-              <CardContent className="pt-8 pb-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon name="Smartphone" size={24} className="text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3">Мобильная адаптация</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Адаптируем ваш сайт для мобильных устройств, 
-                      обеспечивая удобство использования на любом экране.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-lg transition-all duration-300">
-              <CardContent className="pt-8 pb-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon name="Search" size={24} className="text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3">SEO-оптимизация</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Повышаем видимость вашего сайта в поисковых системах, 
-                      привлекая больше целевых посетителей.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-lg transition-all duration-300">
-              <CardContent className="pt-8 pb-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon name="Wrench" size={24} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3">Поддержка и обслуживание</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Обеспечиваем техническую поддержку и регулярное 
-                      обновление вашего веб-сайта.
-                    </p>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>
