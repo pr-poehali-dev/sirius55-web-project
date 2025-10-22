@@ -41,7 +41,7 @@ const Index = () => {
               Контакты
             </a>
           </div>
-          <Button size="sm" className="hidden md:inline-flex" onClick={() => setIsContactOpen(true)}>
+          <Button size="sm" onClick={() => setIsContactOpen(true)}>
             Связаться
           </Button>
         </nav>
