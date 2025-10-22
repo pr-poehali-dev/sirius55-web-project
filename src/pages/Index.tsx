@@ -13,6 +13,7 @@ const Index = () => {
     message: ""
   });
   const [isRecipeOpen, setIsRecipeOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,7 +41,7 @@ const Index = () => {
               Контакты
             </a>
           </div>
-          <Button size="sm" className="hidden md:inline-flex">
+          <Button size="sm" className="hidden md:inline-flex" onClick={() => setIsContactOpen(true)}>
             Связаться
           </Button>
         </nav>
@@ -253,6 +254,48 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-primary mb-4">
+              📞 Контакты
+            </DialogTitle>
+            <DialogDescription className="text-base space-y-4">
+              <div className="text-center py-6">
+                <div className="mb-4">
+                  <p className="text-sm text-muted-foreground mb-2">Телефон для связи:</p>
+                  <a 
+                    href="tel:+79025747783" 
+                    className="text-3xl font-bold text-primary hover:text-primary/80 transition-colors"
+                  >
+                    +7 (902) 574-77-83
+                  </a>
+                </div>
+                <div className="flex gap-3 justify-center mt-6">
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90"
+                    onClick={() => window.location.href = 'tel:+79025747783'}
+                  >
+                    <Icon name="Phone" className="mr-2" size={20} />
+                    Позвонить
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-2"
+                    onClick={() => window.open('https://wa.me/79025747783', '_blank')}
+                  >
+                    <Icon name="MessageCircle" className="mr-2" size={20} />
+                    WhatsApp
+                  </Button>
+                </div>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
 
       <Dialog open={isRecipeOpen} onOpenChange={setIsRecipeOpen}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
