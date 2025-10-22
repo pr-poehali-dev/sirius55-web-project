@@ -41,7 +41,7 @@ const Index = () => {
               Контакты
             </a>
           </div>
-          <Button size="sm" onClick={() => setIsContactOpen(true)} className="shrink-0">
+          <Button size="sm" onClick={() => setIsContactOpen(true)} className="shrink-0 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
             <span className="hidden sm:inline">Связаться</span>
             <span className="sm:hidden">☎️</span>
           </Button>
