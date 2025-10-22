@@ -52,7 +52,7 @@ const Index = () => {
             </h1>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button size="lg" variant="outline" className="border-2">
-                Узнать больше
+                Рецепт
               </Button>
             </div>
           </div>
