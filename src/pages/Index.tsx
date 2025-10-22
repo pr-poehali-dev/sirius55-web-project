@@ -127,7 +127,7 @@ const Index = () => {
                   3 эксклюзивных рецепта для поднятия настроения на каждый день
                 </p>
                 <div className="text-center mb-6">
-                  <span className="text-4xl font-bold text-primary">990₽</span>
+                  <span className="text-4xl font-bold text-primary">20₽</span>
                 </div>
                 <Button className="w-full" onClick={() => setIsContactOpen(true)}>
                   Купить рецепты
@@ -148,7 +148,7 @@ const Index = () => {
                   7 уникальных рецептов + секретные ингредиенты для особых случаев
                 </p>
                 <div className="text-center mb-6">
-                  <span className="text-4xl font-bold text-secondary">1990₽</span>
+                  <span className="text-4xl font-bold text-secondary">40₽</span>
                 </div>
                 <Button className="w-full bg-secondary hover:bg-secondary/90" onClick={() => setIsContactOpen(true)}>
                   Купить рецепты
@@ -166,7 +166,7 @@ const Index = () => {
                   15 авторских рецептов + личная консультация шефа + бонусы
                 </p>
                 <div className="text-center mb-6">
-                  <span className="text-4xl font-bold text-accent">3990₽</span>
+                  <span className="text-4xl font-bold text-accent">100₽</span>
                 </div>
                 <Button className="w-full bg-accent hover:bg-accent/90" onClick={() => setIsContactOpen(true)}>
                   Купить рецепты
