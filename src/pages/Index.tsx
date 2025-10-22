@@ -47,12 +47,9 @@ const Index = () => {
       <section id="home" className="pt-32 pb-20 px-6">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-12 leading-tight">
               #WEB DEVELOPMENT
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Веб-сайт — это виртуальное пространство, представляющее собой совокупность взаимосвязанных страниц, размещенных в Интернете. Он позволяет пользователям получать информацию о продукте.
-            </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 Начать проект
