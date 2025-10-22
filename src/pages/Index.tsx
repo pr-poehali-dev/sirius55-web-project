@@ -100,7 +100,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-4">Гибкость и масштабируемость</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Сайт можно обновлять и дополнять новыми материалами.
+                  Сайт обновляется регулярно дополняя новыми материалами.
                 </p>
               </CardContent>
             </Card>
