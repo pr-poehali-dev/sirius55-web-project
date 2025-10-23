@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import RecipesSection from "@/components/RecipesSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ContactDialog from "@/components/dialogs/ContactDialog";
 import RecipeDialog from "@/components/dialogs/RecipeDialog";
@@ -79,12 +78,6 @@ const Index = () => {
       <AdvantagesSection />
       
       <RecipesSection onBuyRecipe={handleBuyRecipe} />
-      
-      <ContactSection 
-        formData={formData}
-        onFormChange={handleFormChange}
-        onSubmit={handleSubmit}
-      />
       
       <Footer />
 
