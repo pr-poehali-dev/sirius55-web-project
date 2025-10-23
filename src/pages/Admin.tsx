@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,9 +15,17 @@ interface Order {
 }
 
 const Admin = () => {
+  const navigate = useNavigate();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'pending' | 'paid'>('all');
+
+  useEffect(() => {
+    const isAuth = localStorage.getItem("admin_auth");
+    if (!isAuth) {
+      navigate("/login");
+    }
+  }, [navigate]);
 
   const fetchOrders = async () => {
     setLoading(true);
@@ -76,12 +85,23 @@ const Admin = () => {
     totalAmount: orders.filter(o => o.status === 'paid').reduce((sum, o) => sum + o.amount, 0)
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("admin_auth");
+    navigate("/login");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       <div className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-primary mb-2">Админ-панель</h1>
-          <p className="text-muted-foreground">Управление заказами рецептов</p>
+        <div className="mb-8 flex justify-between items-center">
+          <div>
+            <h1 className="text-4xl font-bold text-primary mb-2">Админ-панель</h1>
+            <p className="text-muted-foreground">Управление заказами рецептов</p>
+          </div>
+          <Button variant="outline" onClick={handleLogout}>
+            <Icon name="LogOut" className="mr-2" size={18} />
+            Выйти
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
