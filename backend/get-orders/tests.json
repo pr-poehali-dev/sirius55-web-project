@@ -1,0 +1,9 @@
+{
+  "tests": [
+    {
+      "name": "Get all orders",
+      "method": "GET",
+      "expectedStatus": 200
+    }
+  ]
+}

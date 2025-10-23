@@ -36,10 +36,31 @@ const Index = () => {
     setIsPaymentOpen(true);
   };
 
-  const handlePaymentConfirm = () => {
-    const telegramUrl = 'https://t.me/79836232746';
-    window.open(telegramUrl, '_blank');
-    setIsPaymentOpen(false);
+  const handlePaymentConfirm = async () => {
+    if (!selectedPlan) return;
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/d96bb7ad-f8bd-44f3-b361-075be7fd0e8f', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          plan: selectedPlan,
+          user_contact: formData.email || formData.name
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        const telegramUrl = `https://t.me/79836232746?text=Заказ%20${data.order_id}%20-%20${selectedPlan}%20план%20(${data.amount}₽)`;
+        window.open(telegramUrl, '_blank');
+        setIsPaymentOpen(false);
+      }
+    } catch (error) {
+      console.error('Error creating order:', error);
+    }
   };
 
   const handlePaymentDialogChange = (open: boolean) => {

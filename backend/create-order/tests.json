@@ -1,0 +1,42 @@
+{
+  "tests": [
+    {
+      "name": "Create basic plan order",
+      "method": "POST",
+      "body": {
+        "plan": "basic",
+        "user_contact": "test@example.com"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "plan": "basic",
+        "amount": 20
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create premium plan order",
+      "method": "POST",
+      "body": {
+        "plan": "premium"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "plan": "premium",
+        "amount": 40
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Reject invalid plan",
+      "method": "POST",
+      "body": {
+        "plan": "invalid"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "Invalid plan"
+      }
+    }
+  ]
+}

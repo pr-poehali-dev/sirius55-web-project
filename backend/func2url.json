@@ -1,0 +1,5 @@
+{
+  "create-order": "https://functions.poehali.dev/d96bb7ad-f8bd-44f3-b361-075be7fd0e8f",
+  "get-orders": "https://functions.poehali.dev/9e3d7f5a-16fe-40e7-8a0a-ea0eaccddf51",
+  "send-email": "https://functions.poehali.dev/4ee2500b-6be0-4354-a900-9c400355235b"
+}
