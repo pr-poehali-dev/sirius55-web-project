@@ -23,6 +23,7 @@ interface Order {
   amount: number;
   status: string;
   created_at: string;
+  recipe_content?: string;
 }
 
 const Profile = () => {
@@ -152,8 +153,9 @@ const Profile = () => {
         </div>
 
         <Tabs defaultValue="overview" className="space-y-4">
-          <TabsList className="grid w-full grid-cols-3 max-w-md">
+          <TabsList className="grid w-full grid-cols-4 max-w-2xl">
             <TabsTrigger value="overview">Обзор</TabsTrigger>
+            <TabsTrigger value="recipes">Рецепты</TabsTrigger>
             <TabsTrigger value="purchases">Покупки</TabsTrigger>
             <TabsTrigger value="settings">Настройки</TabsTrigger>
           </TabsList>
@@ -226,6 +228,59 @@ const Profile = () => {
                         </div>
                       </div>
                     ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="recipes" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Мои рецепты</CardTitle>
+                <CardDescription>Доступ к купленным рецептам Vasabi</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {orders.filter(order => order.status === 'paid' && order.recipe_content).length === 0 ? (
+                  <div className="text-center py-12">
+                    <Icon name="Book" size={48} className="mx-auto text-muted-foreground mb-4" />
+                    <p className="text-muted-foreground mb-4">У вас пока нет доступных рецептов</p>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Купите рецепт на главной странице или получите его от администратора
+                    </p>
+                    <Button onClick={() => navigate("/")}>
+                      Перейти к рецептам
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {orders
+                      .filter(order => order.status === 'paid' && order.recipe_content)
+                      .map((order) => (
+                        <Card key={order.id} className="border-2 border-primary/20">
+                          <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <CardTitle className="text-xl">{getPlanName(order.plan)}</CardTitle>
+                                <CardDescription>
+                                  Получено: {formatDate(order.created_at)}
+                                </CardDescription>
+                              </div>
+                              <Badge className="bg-primary text-primary-foreground">
+                                <Icon name="CheckCircle" size={16} className="mr-1" />
+                                Активен
+                              </Badge>
+                            </div>
+                          </CardHeader>
+                          <CardContent className="pt-6">
+                            <div className="prose prose-sm max-w-none">
+                              <div className="whitespace-pre-wrap font-mono text-sm bg-muted p-4 rounded-lg">
+                                {order.recipe_content}
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
                   </div>
                 )}
               </CardContent>
