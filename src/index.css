@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 190 100% 97%;
-    --foreground: 210 10% 10%;
+    --background: 0 0% 100%;
+    --foreground: 280 10% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 10% 10%;
+    --card-foreground: 280 10% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 10% 10%;
+    --popover-foreground: 280 10% 10%;
 
-    --primary: 173 80% 45%;
+    --primary: 280 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 85% 50%;
+    --secondary: 335 80% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 185 60% 92%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 280 30% 95%;
+    --muted-foreground: 280 10% 45%;
 
-    --accent: 0 72% 63%;
+    --accent: 15 90% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 173 65% 55%;
+    --border: 280 20% 90%;
+    --input: 280 20% 90%;
+    --ring: 280 85% 55%;
 
     --radius: 0.5rem;
 
@@ -100,7 +100,7 @@
   body {
     @apply text-foreground;
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+    background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #ede7f6 100%);
     background-attachment: fixed;
   }
 
