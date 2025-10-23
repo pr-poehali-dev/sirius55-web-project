@@ -59,18 +59,25 @@ const PaymentDialog = ({
                     </div>
                   </div>
                 </div>
-                <div className="bg-secondary/5 p-4 rounded-lg border border-secondary/20">
-                  <p className="text-sm text-muted-foreground text-center">
-                    После перевода нажмите кнопку "Я оплатил(а)" ниже
-                  </p>
+                <div className="bg-blue-50 p-6 rounded-lg border-2 border-blue-500/30">
+                  <div className="flex items-start gap-3 mb-4">
+                    <Icon name="MessageCircle" className="text-blue-600 mt-1" size={24} />
+                    <div>
+                      <h4 className="font-bold text-foreground mb-2">Отправьте чек в Telegram:</h4>
+                      <p className="text-sm text-muted-foreground">
+                        После оплаты перейдите в наш Telegram и отправьте скриншот чека. 
+                        Мы проверим платеж и сразу вышлем вам рецепты!
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <Button 
                   size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                   onClick={onPaymentConfirm}
                 >
-                  <Icon name="Check" className="mr-2" size={20} />
-                  Я оплатил(а)
+                  <Icon name="Send" className="mr-2" size={20} />
+                  Отправить чек в Telegram
                 </Button>
               </div>
             )}

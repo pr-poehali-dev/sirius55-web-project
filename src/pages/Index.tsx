@@ -37,10 +37,9 @@ const Index = () => {
   };
 
   const handlePaymentConfirm = () => {
-    setPaymentStep('checking');
-    setTimeout(() => {
-      setPaymentStep('recipe');
-    }, 7000);
+    const telegramUrl = 'https://t.me/79836232746';
+    window.open(telegramUrl, '_blank');
+    setIsPaymentOpen(false);
   };
 
   const handlePaymentDialogChange = (open: boolean) => {
