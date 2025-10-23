@@ -62,7 +62,8 @@ const Index = () => {
       const data = await response.json();
       
       if (response.ok) {
-        const telegramUrl = `https://t.me/79836232746?text=Заказ%20${data.order_id}%20-%20${selectedPlan}%20план%20(${data.amount}₽)`;
+        const userIdText = userId ? `%0AID%20пользователя:%20${userId}` : '';
+        const telegramUrl = `https://t.me/79836232746?text=Заказ%20${data.order_id}%20-%20${selectedPlan}%20план%20(${data.amount}₽)${userIdText}`;
         window.open(telegramUrl, '_blank');
         setIsPaymentOpen(false);
       }

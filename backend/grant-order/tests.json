@@ -1,0 +1,35 @@
+{
+  "tests": [
+    {
+      "name": "Grant order with valid user_id",
+      "method": "POST",
+      "body": {
+        "user_id": 1,
+        "plan": "basic"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "order": {
+          "plan": "string",
+          "status": "string"
+        },
+        "user": {
+          "email": "string"
+        }
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Reject with missing user_id",
+      "method": "POST",
+      "body": {
+        "plan": "basic"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
