@@ -38,6 +38,14 @@ const Index = () => {
   const handlePaymentConfirm = async () => {
     if (!selectedPlan) return;
     
+    const authData = localStorage.getItem("user_auth");
+    let userId = null;
+    
+    if (authData) {
+      const { user } = JSON.parse(authData);
+      userId = user.id;
+    }
+    
     try {
       const response = await fetch('https://functions.poehali.dev/d96bb7ad-f8bd-44f3-b361-075be7fd0e8f', {
         method: 'POST',
@@ -46,7 +54,8 @@ const Index = () => {
         },
         body: JSON.stringify({
           plan: selectedPlan,
-          user_contact: formData.email || formData.name
+          user_contact: formData.email || formData.name,
+          user_id: userId
         })
       });
       
