@@ -317,9 +317,9 @@ const Admin = () => {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="basic">Базовый (2990₽)</SelectItem>
-                        <SelectItem value="premium">Премиум (6990₽)</SelectItem>
-                        <SelectItem value="vip">VIP (14990₽)</SelectItem>
+                        <SelectItem value="basic">Базовый (20₽)</SelectItem>
+                        <SelectItem value="premium">Премиум (40₽)</SelectItem>
+                        <SelectItem value="vip">VIP (100₽)</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

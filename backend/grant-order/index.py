@@ -11,9 +11,9 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 
 PLAN_PRICES = {
-    'basic': 2990,
-    'premium': 6990,
-    'vip': 14990
+    'basic': 20,
+    'premium': 40,
+    'vip': 100
 }
 
 PLAN_RECIPES = {
