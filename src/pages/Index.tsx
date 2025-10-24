@@ -8,6 +8,7 @@ import ContactDialog from "@/components/dialogs/ContactDialog";
 import RecipeDialog from "@/components/dialogs/RecipeDialog";
 import PaymentDialog from "@/components/dialogs/PaymentDialog";
 import FloatingWasabi from "@/components/FloatingWasabi";
+import StarryBackground from "@/components/StarryBackground";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -82,6 +83,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
+      <StarryBackground />
       <FloatingWasabi />
       <Header onContactClick={() => setIsContactOpen(true)} />
       
