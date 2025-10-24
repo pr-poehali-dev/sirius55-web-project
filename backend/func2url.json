@@ -1,5 +1,5 @@
 {
-  "grant-order": "https://functions.poehali.dev/d4bd4ae4-7ed8-4014-b76e-77523c43d8b8",
+  "visitors": "https://functions.poehali.dev/fb3e9453-64b3-4196-82ca-df7b05ac6ecf",
   "auth-register": "https://functions.poehali.dev/3a0fbf52-f208-44f0-a3a6-e67562c32b28",
   "auth-login": "https://functions.poehali.dev/02576727-90e3-4fde-9200-ba7be5d0b064",
   "create-order": "https://functions.poehali.dev/d96bb7ad-f8bd-44f3-b361-075be7fd0e8f",

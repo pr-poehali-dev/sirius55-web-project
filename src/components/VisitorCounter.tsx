@@ -3,34 +3,62 @@ import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
 const VisitorCounter = () => {
-  const [visitors, setVisitors] = useState(0);
+  const [totalVisitors, setTotalVisitors] = useState(0);
+  const [todayVisitors, setTodayVisitors] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    const storedCount = localStorage.getItem('visitor_count');
-    const initialCount = storedCount ? parseInt(storedCount, 10) : 1247;
-    
-    const newCount = initialCount + 1;
-    localStorage.setItem('visitor_count', newCount.toString());
-    
-    let currentCount = 0;
-    const increment = Math.ceil(newCount / 50);
-    const duration = 2000;
-    const stepTime = duration / 50;
-
-    setIsAnimating(true);
-    const timer = setInterval(() => {
-      currentCount += increment;
-      if (currentCount >= newCount) {
-        setVisitors(newCount);
-        setIsAnimating(false);
-        clearInterval(timer);
-      } else {
-        setVisitors(currentCount);
+    const getOrCreateVisitorId = () => {
+      let visitorId = localStorage.getItem('visitor_id');
+      if (!visitorId) {
+        visitorId = `visitor_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+        localStorage.setItem('visitor_id', visitorId);
       }
-    }, stepTime);
+      return visitorId;
+    };
 
-    return () => clearInterval(timer);
+    const trackVisitor = async () => {
+      const visitorId = getOrCreateVisitorId();
+      
+      try {
+        const response = await fetch('https://functions.poehali.dev/fb3e9453-64b3-4196-82ca-df7b05ac6ecf', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Visitor-Id': visitorId,
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          animateCount(data.total_visitors, setTotalVisitors);
+          setTodayVisitors(data.today_visitors);
+        }
+      } catch (error) {
+        console.error('Error tracking visitor:', error);
+      }
+    };
+
+    const animateCount = (targetCount: number, setter: (value: number) => void) => {
+      let currentCount = 0;
+      const increment = Math.ceil(targetCount / 50);
+      const duration = 2000;
+      const stepTime = duration / 50;
+
+      setIsAnimating(true);
+      const timer = setInterval(() => {
+        currentCount += increment;
+        if (currentCount >= targetCount) {
+          setter(targetCount);
+          setIsAnimating(false);
+          clearInterval(timer);
+        } else {
+          setter(currentCount);
+        }
+      }, stepTime);
+    };
+
+    trackVisitor();
   }, []);
 
   const formatNumber = (num: number) => {
@@ -48,13 +76,13 @@ const VisitorCounter = () => {
             <div>
               <p className="text-xs text-muted-foreground mb-1">Посетителей</p>
               <p className={`text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent ${isAnimating ? 'animate-pulse' : ''}`}>
-                {formatNumber(visitors)}
+                {formatNumber(totalVisitors)}
               </p>
             </div>
           </div>
           <div className="mt-2 flex items-center gap-1 text-xs text-green-600">
             <Icon name="TrendingUp" size={12} />
-            <span>+12 сегодня</span>
+            <span>+{todayVisitors} сегодня</span>
           </div>
         </CardContent>
       </Card>

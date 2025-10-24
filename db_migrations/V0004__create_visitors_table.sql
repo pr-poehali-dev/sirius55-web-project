@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS visitors (
+    id SERIAL PRIMARY KEY,
+    visitor_id VARCHAR(255) UNIQUE NOT NULL,
+    first_visit TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_visit TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    visit_count INTEGER DEFAULT 1
+);
+
+CREATE INDEX IF NOT EXISTS idx_visitor_id ON visitors(visitor_id);

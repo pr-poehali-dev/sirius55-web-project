@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "name": "Get visitor statistics",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Track new visitor",
+      "method": "POST",
+      "path": "/",
+      "headers": {
+        "X-Visitor-Id": "test-visitor-new-unique-id"
+      },
+      "expectedStatus": 200
+    }
+  ]
+}
