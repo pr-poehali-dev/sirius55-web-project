@@ -57,7 +57,7 @@ const Login = () => {
     setLoading(true);
 
     setTimeout(() => {
-      if (formData.adminPassword === "Vasabi1337") {
+      if (formData.adminPassword === "Sirius55") {
         localStorage.setItem("admin_auth", "true");
         navigate("/admin");
       } else {

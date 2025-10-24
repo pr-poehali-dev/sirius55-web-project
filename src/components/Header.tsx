@@ -27,13 +27,13 @@ const Header = ({ onContactClick }: HeaderProps) => {
         <Link to="/" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 md:w-12 md:h-12">
             <img 
-              src="https://cdn.poehali.dev/projects/8fd86066-172f-4929-8969-b7d3d0af6e07/files/1c7844f0-c9a1-4e67-8143-419b3798d66d.jpg" 
-              alt="Vasabi Logo" 
-              className="w-full h-full object-contain transition-transform group-hover:scale-110"
+              src="https://cdn.poehali.dev/files/ad79537b-a843-44c9-ab02-ceaba0bc59f9.jpg" 
+              alt="Sirius55 Logo" 
+              className="w-full h-full object-contain transition-transform group-hover:scale-110 group-hover:rotate-12"
             />
           </div>
           <span className="text-xl md:text-2xl font-bold text-foreground">
-            <span className="text-primary">Vasa</span>bi
+            <span className="text-primary">Sirius</span>55
           </span>
         </Link>
         <div className="hidden md:flex gap-8 items-center">

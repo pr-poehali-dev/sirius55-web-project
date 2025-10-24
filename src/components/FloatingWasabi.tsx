@@ -1,25 +1,27 @@
 import { useEffect, useState } from 'react';
 
-interface WasabiParticle {
+interface SiriusParticle {
   id: number;
   x: number;
   y: number;
   size: number;
   duration: number;
   delay: number;
+  rotation: number;
 }
 
 const FloatingWasabi = () => {
-  const [particles, setParticles] = useState<WasabiParticle[]>([]);
+  const [particles, setParticles] = useState<SiriusParticle[]>([]);
 
   useEffect(() => {
-    const newParticles: WasabiParticle[] = Array.from({ length: 15 }, (_, i) => ({
+    const newParticles: SiriusParticle[] = Array.from({ length: 12 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 30 + 20,
-      duration: Math.random() * 20 + 15,
-      delay: Math.random() * 5,
+      size: Math.random() * 60 + 40,
+      duration: Math.random() * 25 + 20,
+      delay: Math.random() * 8,
+      rotation: Math.random() * 360,
     }));
     setParticles(newParticles);
   }, []);
@@ -29,7 +31,7 @@ const FloatingWasabi = () => {
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className="absolute opacity-5 animate-float"
+          className="absolute opacity-[0.03] animate-float-logo"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -37,11 +39,14 @@ const FloatingWasabi = () => {
             height: `${particle.size}px`,
             animationDuration: `${particle.duration}s`,
             animationDelay: `${particle.delay}s`,
+            transform: `rotate(${particle.rotation}deg)`,
           }}
         >
-          <svg viewBox="0 0 100 100" fill="currentColor" className="text-primary">
-            <path d="M50 10 C30 10 20 25 20 40 C20 60 35 75 50 90 C65 75 80 60 80 40 C80 25 70 10 50 10 Z M50 30 C55 30 60 35 60 40 C60 45 55 50 50 50 C45 50 40 45 40 40 C40 35 45 30 50 30 Z" />
-          </svg>
+          <img 
+            src="https://cdn.poehali.dev/files/ad79537b-a843-44c9-ab02-ceaba0bc59f9.jpg" 
+            alt=""
+            className="w-full h-full object-contain"
+          />
         </div>
       ))}
     </div>
