@@ -10,6 +10,8 @@ import PaymentDialog from "@/components/dialogs/PaymentDialog";
 import FloatingWasabi from "@/components/FloatingWasabi";
 import StarryBackground from "@/components/StarryBackground";
 import ScrollToTop from "@/components/ScrollToTop";
+import CursorTrail from "@/components/CursorTrail";
+import ShootingStar from "@/components/ShootingStar";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -85,7 +87,9 @@ const Index = () => {
   return (
     <div className="min-h-screen relative">
       <StarryBackground />
+      <ShootingStar />
       <FloatingWasabi />
+      <CursorTrail />
       <Header onContactClick={() => setIsContactOpen(true)} />
       
       <HeroSection onRecipeClick={() => setIsRecipeOpen(true)} />

@@ -176,7 +176,42 @@
     animation: float-logo 30s ease-in-out infinite;
   }
 
+  @keyframes shooting {
+    0% {
+      transform: translateX(0) translateY(0) rotate(-45deg);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(300px) translateY(300px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
   .animate-twinkle {
     animation: twinkle 3s ease-in-out infinite;
+  }
+
+  .shooting-star {
+    animation: shooting 2s linear forwards;
+  }
+
+  .shooting-star::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(168, 85, 247, 0.8) 50%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    transform: translateX(-100%);
+    border-radius: 50%;
   }
 }
