@@ -13,6 +13,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CursorTrail from "@/components/CursorTrail";
 import ShootingStar from "@/components/ShootingStar";
 import MusicPlayer from "@/components/MusicPlayer";
+import VisitorCounter from "@/components/VisitorCounter";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -91,6 +92,7 @@ const Index = () => {
       <ShootingStar />
       <FloatingWasabi />
       <CursorTrail />
+      <VisitorCounter />
       <Header onContactClick={() => setIsContactOpen(true)} />
       
       <HeroSection onRecipeClick={() => setIsRecipeOpen(true)} />
