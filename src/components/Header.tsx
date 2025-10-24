@@ -21,6 +21,14 @@ const Header = ({ onContactClick }: HeaderProps) => {
     return () => window.removeEventListener('storage', checkAuth);
   }, []);
 
+  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.querySelector(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -37,13 +45,25 @@ const Header = ({ onContactClick }: HeaderProps) => {
           </span>
         </Link>
         <div className="hidden md:flex gap-8 items-center">
-          <a href="#home" className="text-foreground hover:text-primary transition-colors">
+          <a 
+            href="#home" 
+            onClick={(e) => smoothScroll(e, '#home')} 
+            className="text-foreground hover:text-primary transition-colors cursor-pointer"
+          >
             Главная
           </a>
-          <a href="#advantages" className="text-foreground hover:text-primary transition-colors">
+          <a 
+            href="#advantages" 
+            onClick={(e) => smoothScroll(e, '#advantages')} 
+            className="text-foreground hover:text-primary transition-colors cursor-pointer"
+          >
             Преимущества
           </a>
-          <a href="#recipes" className="text-foreground hover:text-primary transition-colors">
+          <a 
+            href="#recipes" 
+            onClick={(e) => smoothScroll(e, '#recipes')} 
+            className="text-foreground hover:text-primary transition-colors cursor-pointer"
+          >
             Рецепты
           </a>
           {isLoggedIn && (

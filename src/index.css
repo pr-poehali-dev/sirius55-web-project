@@ -102,6 +102,7 @@
     font-family: "Roboto", sans-serif;
     background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #ede7f6 100%);
     background-attachment: fixed;
+    scroll-behavior: smooth;
   }
 
   h1,
