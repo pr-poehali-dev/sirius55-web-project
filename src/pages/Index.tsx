@@ -12,6 +12,7 @@ import StarryBackground from "@/components/StarryBackground";
 import ScrollToTop from "@/components/ScrollToTop";
 import CursorTrail from "@/components/CursorTrail";
 import ShootingStar from "@/components/ShootingStar";
+import MusicPlayer from "@/components/MusicPlayer";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -119,6 +120,7 @@ const Index = () => {
       />
 
       <ScrollToTop />
+      <MusicPlayer />
     </div>
   );
 };
