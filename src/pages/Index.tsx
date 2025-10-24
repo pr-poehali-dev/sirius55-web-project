@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import ContactDialog from "@/components/dialogs/ContactDialog";
 import RecipeDialog from "@/components/dialogs/RecipeDialog";
 import PaymentDialog from "@/components/dialogs/PaymentDialog";
+import FloatingWasabi from "@/components/FloatingWasabi";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -80,7 +81,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <FloatingWasabi />
       <Header onContactClick={() => setIsContactOpen(true)} />
       
       <HeroSection onRecipeClick={() => setIsRecipeOpen(true)} />

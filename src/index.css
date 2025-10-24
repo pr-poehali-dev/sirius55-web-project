@@ -113,3 +113,25 @@
     font-family: "Inter", sans-serif;
   }
 }
+
+@layer utilities {
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px) rotate(5deg);
+    }
+    50% {
+      transform: translateY(-40px) translateX(-10px) rotate(-5deg);
+    }
+    75% {
+      transform: translateY(-20px) translateX(10px) rotate(3deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 20s ease-in-out infinite;
+  }
+}
