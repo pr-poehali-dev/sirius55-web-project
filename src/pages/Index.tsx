@@ -9,6 +9,7 @@ import RecipeDialog from "@/components/dialogs/RecipeDialog";
 import PaymentDialog from "@/components/dialogs/PaymentDialog";
 import FloatingWasabi from "@/components/FloatingWasabi";
 import StarryBackground from "@/components/StarryBackground";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -112,6 +113,8 @@ const Index = () => {
         paymentStep={paymentStep}
         onPaymentConfirm={handlePaymentConfirm}
       />
+
+      <ScrollToTop />
     </div>
   );
 };
